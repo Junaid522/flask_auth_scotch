@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block content %}
+<header class="header">
+        <div class="container-fluid">
+            <div class="top-bar">
+                <a class="logo" href="#" title="logo"><img src="../static/images/logo.svg" alt="logo" height="52px" width="291px"></a>
+                <nav class="main-menu-nav ">
+                    <div class="body-overlay"></div>
+                    <div class="menu-toggler"></div>
+                    <div class="main-menu-div">
+                        <div class="menu-header">
+                            <a href="#" title="Home" class="home-icon fa fa-home"></a>
+                            <span class="close-icon fa fa-times"></span>
+                        </div>
+                        <ul>
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                Home
+                            </a>
+                            {% if not current_user.is_authenticated %}
+                                <li class="active">
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                Sign In
+                            </a>
+                                </li>
+                                <li>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                                Sign Up
+                            </a>
+                                </li>
+                                <li>
+                            <a href="#" class="navbar-item">
+                                About
+                            </a>
+                                </li>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+                                <li class="active">
+                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                                {{ current_user.username }}
+                            </a>
+                                </li>
+                                <li>
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="getQuoteWrapper">
+        <div class="getQuoteTopBox">
+            <div class="companyIntro">
+                <h1>Car Repair & Servicing Made Easy</h1>
+                <h2>A fair price in seconds, mechanics you can trust, next-day service at your door</h2>
+                <p> Trust Pilot<span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
+                <p class="introRating">Excellent rating - 9.3 out of 10 (4300+ reviews)</p>
+            </div>
+            <div class="getQuoteBox">
+                <h4>Get a quote</h4>
+                <div class="form-group">
+                    <input type="text" name="" class="form-control" placeholder="Your Postcode">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" class="form-control" placeholder="Your Registration No">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <a href="#">I dont't know my registration number</a>
+                </div>
+                <button class="btn">Get your Instant Quote</button>
+            </div>
+        </div>
+    </section>
+    <main class="main">
+        <section class="topMBoxesSection">
+            <div class="container">
+                <div class="topMBoxes">
+                    <div class="topMSingleBox">
+                        <img src="../static/images/person.svg" height="" width="" alt="person">
+                        <h2>Up to 50% cheaper than franchise dealers</h2>
+                    </div>
+                    <div class="topMSingleBox">
+                        <img src="../static/images/person.svg" height="" width="" alt="person">
+                        <h2>Up to 50% cheaper than franchise dealers</h2>
+                    </div>
+                    <div class="topMSingleBox">
+                        <img src="../static/images/person.svg" height="" width="" alt="person">
+                        <h2>Up to 50% cheaper than franchise dealers</h2>
+                    </div>
+                    <div class="topMSingleBox">
+                        <img src="../static/images/person.svg" height="" width="" alt="person">
+                        <h2>Up to 50% cheaper than franchise dealers</h2>
+                    </div>
+                    <div class="topMSingleBox">
+                        <img src="../static/images/person.svg" height="" width="" alt="person">
+                        <h2>Up to 50% cheaper than franchise dealers</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <section class="asSeenSection">
+                <div class="asSeenBox">
+                    <p>As seen in</p>
+                </div>
+                <div class="asSeenBox">
+                    <a href="#"><img src="../static/images/seenLogo.svg" alt="seenLogo" height="" width=""></a>
+                </div>
+                <div class="asSeenBox">
+                    <a href="#"><img src="../static/images/seenLogo.svg" alt="seenLogo" height="" width=""></a>
+                </div>
+                <div class="asSeenBox">
+                    <a href="#"><img src="../static/images/seenLogo.svg" alt="seenLogo" height="" width=""></a>
+                </div>
+                <div class="asSeenBox">
+                    <a href="#"><img src="../static/images/seenLogo.svg" alt="seenLogo" height="" width=""></a>
+                </div>
+        </div>
+        </section>
+        </div>
+        <section class="contentSection">
+            <div class="container">
+                <h1>Our quotes are instant, fair and transparent</h1>
+                <p>Ever walked into a workshop and been given a quote only to realise you have no idea if it's a good deal? You're not alone. We found that almost half of car owners have no idea what their car repair should cost.</p>
+                <p>Ever walked into a <a href="#">workshop</a> and been given a quote only to realise you have no idea if it's a good deal? You're not alone. We found that almost half of car owners have no idea what their car repair should cost.</p>
+                <p>Ever walked into a workshop and been given a <a href="#">quote</a> only to realise you have no idea if it's a good deal? You're not alone. We found that almost half of car owners have no idea what their car repair should cost.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footerFlex">
+                <p>Copyright © 2019 ClickMechanic Ltd. Site Map</p>
+                <ul class="socialIcons">
+                    <li><a href="#" class="fa fa-facebook-f"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-linkedin"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

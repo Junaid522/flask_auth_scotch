@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="loginWrapper">
+        <div class="loginLogo">
+            <a href="#"><img src="../static/images/logo.svg" alt="logo" height="" width=""></a>
+        </div>
+        <div class="loginBox">
+            <h2>Log In</h2>
+            <div class="form-group">
+                <input type="text" name="" class="form-control" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" class="form-control" placeholder="Password">
+            </div>
+            <div class="loginFlex form-group">
+                <label><input type="checkbox" name="">Remember me</label>
+                <a href="#">Forget Password?</a>
+            </div>
+            <div class="form-group">
+                <button class="btn loginBtn">Log in</button>
+            </div>
+            <span class="orSpan">OR</span>
+            <p class="externalLogin">Log in with</p>
+            <ul>
+                <li><a href="#"><span class="fa fa-google"></span> </a> </li>
+                <li><a href="#"><span class="fa fa-facebook-f"></span></a> </li>
+                <li><a href="#"><span class="fa fa-twitter"></span></a> </li>
+            </ul>
+            <p class="noAccount">No account? <a href="#">Click here to get your instant quote?</a> </p>
+        </div>
+    </div>
+    <script type="text/javascript " src="../static/js/jquery.min.js "></script>
+    <script src="../static/js/plugins.js "></script>
+    <script src="../static/js/system.js "></script>
+
+{% endblock %}
